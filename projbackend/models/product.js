@@ -1,7 +1,8 @@
-const mongoose = require('mongoose');
-const {ObjectId} = mongoose.Schema;
+import { mongo, Mongoose, Schema } from 'mongoose';
 
-const productSchema =  new mongoose.Schema({
+const {ObjectId} = Schema;
+
+const productSchema =  new Schema({
     name:{
         type:String,
         trim:true,
@@ -36,3 +37,5 @@ const productSchema =  new mongoose.Schema({
     },
     {timestamps:true}
 );
+
+module.exports = Mongoose.module("Product",productSchema);
